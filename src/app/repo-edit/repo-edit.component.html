@@ -1,0 +1,36 @@
+<div>
+  <h2>GitHub repos</h2><hr/>
+  <form [formGroup]="repoForm" *ngIf="repoForm" novalidate>
+    <div class="form-group">
+      <label class="col-md-4">Name</label>
+      <input type="text" class="form-control"
+             formControlName="RepoName"
+             #RepoName/>
+    </div>
+    <div
+      *ngIf="repoForm.controls['RepoName'].invalid && (repoForm.controls['RepoName'].dirty || repoForm.controls['RepoName'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="repoForm.controls['RepoName'].errors.required">
+        Repository Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4">Description </label>
+      <textarea class="form-control" rows=7 cols="5"
+                formControlName="RepoDescription"
+                #RepoDescription></textarea>
+    </div>
+    <div
+      *ngIf="repoForm.controls['RepoDescription'].invalid && (repoForm.controls['RepoDescription'].dirty || repoForm.controls['RepoDescription'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="repoForm.controls['RepoDescription'].errors.required">
+        Repository Description is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <button (click)="addRepository(RepoName.value, RepoDescription.value)" type="submit" class="btn btn-success">
+        Save
+      </button>
+    </div>
+  </form>
+</div>

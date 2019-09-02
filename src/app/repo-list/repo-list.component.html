@@ -1,0 +1,10 @@
+<div>
+  <h2>GitHub repos</h2><hr/>
+  <div class="container" *ngFor="let repo of repoList">
+    <a [routerLink]="['/repo', repo.name]">
+      <p colspan="2"><strong>{{ repo?.name}}</strong><span colspan="2">{{repo?.updated_at| date:'fullDate'}}</span></p>
+      <p>{{repo?.description}}</p>
+      <p>{{repo?.license?.name}}</p>
+    </a>
+  </div>
+</div>

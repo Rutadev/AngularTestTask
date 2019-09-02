@@ -1,0 +1,9 @@
+<div *ngIf="repoDescription">
+    <h2>GitHub repos</h2><hr/>
+    <h3>{{repoDescription?.name}}</h3>
+    <p>{{repoDescription?.description}}</p>
+    <p>Owner: {{repoDescription?.owner?.login}}</p>
+    <p>Forks: {{repoDescription.forks_count}}</p>
+    <p>Open isues: {{repoDescription.open_issues_count}}</p>
+    <a (click)="redirect(repoDescription.name)" class="btn btn-primary">Edit</a>
+</div>

@@ -1,0 +1,11 @@
+.container {
+  border: 1px solid;
+  border-color: #e0e0e0;
+}
+a {
+  color: #949494;
+  text-decoration: none;
+}
+span {
+  margin-left: 75%
+}
